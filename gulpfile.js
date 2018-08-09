@@ -27,6 +27,7 @@ var gulp = require('gulp'),
 var path = {
     source:      'source',
     deploy:      'deploy',
+    injection:   'chain-partners.github.io/daybit-cs-freshdesk-style',
     cssFileName: 'style.scss'
 };
 
@@ -59,7 +60,7 @@ gulp.task('convert:sass:sourcemap', function () {
             maxImageSize: 120*1024                                  // bytes,
         }))
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest(path.deploy));
+        .pipe(gulp.dest(path.injection));
 });
 
 // 배포용 css 만들기
@@ -102,3 +103,7 @@ gulp.task('default', function () {
 gulp.task('deploy', function () {
 	runSequence('convert:sass','release');
 });
+
+
+
+
