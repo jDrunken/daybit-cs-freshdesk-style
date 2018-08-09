@@ -1,0 +1,28 @@
+{
+  "name": "daybit-cs-freshdesk-style",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chain-partners/daybit-cs-freshdesk-style.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chain-partners/daybit-cs-freshdesk-style/issues"
+  },
+  "homepage": "https://github.com/chain-partners/daybit-cs-freshdesk-style#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-base64": "^0.1.3",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "run-sequence": "^2.2.1"
+  }
+}
