@@ -1,0 +1,75 @@
+// --------------------------------------------------------------------------------
+// page
+// 본문 섹션
+// --------------------------------------------------------------------------------
+
+.page {}		// namespace
+
+
+// header + nav + help-center
+// 검색과 간단한 로그인이 있는 섹션
+.page {
+	section.help-center {
+		text-align:center;
+
+		&.home {
+			border-radius:0;
+			padding:40px 0;
+
+			h2.heading {
+				font-size:rem(32);
+				line-height:1;
+				color:#002248;
+				text-shadow:0 0 4px rgba(0, 34, 72, 0.4);
+			}
+
+			.hc-search {
+				width:60%;
+				padding-right:0;
+
+				.hc-search-form {
+					width:inherit;
+					text-align:center;
+
+					&:focus-within {
+						border-color:transparent;
+						box-shadow:0 0 5px rgba(44, 71, 102, 1.000);
+					}
+				}
+			}
+
+			.hc-nav > nav > div {
+				display:inline-block;
+
+				a {
+					float:none;
+				}
+			}
+		}
+	}
+}
+
+
+.page {
+	// home 화면
+	section.main.content,
+	section.sidebar.content {
+		h2.heading {
+			line-height:1.5;
+			border-bottom:1px solid #DADFE3;
+			padding-bottom:0.4em;
+
+			a:hover {
+				text-decoration:none;
+			}
+		}
+
+	}
+}
+
+
+@include media('>=45em') {
+	.main .cs-g {
+		margin-bottom:15px;
+	}
+}

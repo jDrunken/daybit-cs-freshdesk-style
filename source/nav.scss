@@ -1,0 +1,31 @@
+// --------------------------------------------------------------------------------
+// nav element
+// body > header + nav
+// -------------------------------------------------------------------------------
+nav.page-tabs {
+	.nav-link {
+		margin:0;
+
+		a {
+			font-weight:400;
+
+			&.active {
+				border-top:0;
+				border-bottom:3px solid #002248;
+				padding:6px 6px 3px 6px;
+				font-weight:700;
+			}
+
+			&:hover {
+				border-top:0;
+				border-bottom:3px solid rgba(0, 35, 70, 0.5);
+				padding:6px 6px 3px 6px;
+				font-weight:500;
+			}
+
+			&.active:hover {
+				border-color:#002248;
+			}
+		}
+	}
+}
