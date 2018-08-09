@@ -18,10 +18,7 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence'),
 
     // gulp-gh-pages
-    publish = require('gulp-gh-pages'),
-
-	// shellscript piper for shell;
-	shell = require('gulp-shell');
+    publish = require('gulp-gh-pages');
 
 // --------------------------------------------------------------------------------
 // 환경설정
