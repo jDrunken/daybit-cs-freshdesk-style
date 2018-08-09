@@ -29,7 +29,7 @@ var gulp = require('gulp'),
 
 var path = {
     source:      'source',
-    deploy:      'support.daybit.com',
+    deploy:      'deploy',
     cssFileName: 'style.scss'
 };
 
