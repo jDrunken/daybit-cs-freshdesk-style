@@ -1,0 +1,44 @@
+<section class="main content rounded-6 min-height-on-desktop fc-article-show" id="article-show-{{ article.id }}">
+	<div class="breadcrumb">
+		<a href="{{ article.category.url }}">{{ article.category.name | h}}</a>
+		<a href="{{ article.folder.url }}">{{ article.folder.name | h}}</a>
+	</div>
+	<b class="page-stamp page-stamp-article">
+		<b class="icon-page-article"></b>
+	</b>
+
+	<h2 class="heading">{{ article.title | h}}
+		<a href="javascript:print();" class="icon-print solution-print-icon" title="{% translate portal.print_title %}"></a>
+	</h2>
+	{% if article.personalized_articles? %}
+	<div> {% translate portal.article.created_by %} {{ article.author }} </div>
+	{% endif %}
+	<p>{% translate portal.article.modified_on %} {{ article.modified_on | short_day_with_time }}</p>
+	<hr />
+	{% comment %}
+	<div>
+		{% for tag in article.tags %}
+			<span class="label label-info">{{tag.name | h}}</span>
+		{% endfor %}
+	</div>
+	{% endcomment %}
+
+	<article class="article-body" id="article-body" rel="image-enlarge">
+		{{ article.body }}
+	</article>
+
+	<hr />
+		{{article | article_attachments}}
+
+		{{article | article_voting }}
+
+</section>
+<section class="sidebar content rounded-6 fc-related-articles">
+	{{ article | related_articles: 10, 'related_articles' }}
+</section>
+<script>
+// gnb nav에 url 추가용도임
+(function ($) {
+	$('nav.page-tabs a[href="{{article.category.url}}"').addClass('active');
+})(jQuery);
+</script>

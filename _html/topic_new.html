@@ -1,0 +1,23 @@
+<!-- <section class="main content rounded-6 fc-new-topic"> -->
+<!-- 	<1!-- To set topic title based on edit or delete --1> -->
+<!-- 	<h3 class="heading"> -->
+<!-- 		{% if topic.id %} -->
+<!-- 			{% translate topic.edit %} -->
+<!-- 		{% else %} -->
+<!-- 			{% translate topic.new %} -->
+<!-- 		{% endif %} -->
+<!-- 	</h3> -->
+
+<!-- 	{% snippet new_topic_form %} -->
+<!-- </section> -->
+
+<!-- <section class="sidebar hide"><br /></section> -->
+
+<script>
+{% if portal.current_language.code == "ko" %}
+	location.href="/ko/support/home";
+{% elsif portal.current_language.code == "en" %}
+	location.href="/en/support/home";
+{% endif %}
+</script>
+
