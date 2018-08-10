@@ -60,6 +60,8 @@
 저장소를 다운로드 받아 설정하고 gulp와 기본 npm plugin을 설정합니다.  
 로컬의 역할은 sass를 css로 변환한 후 특정 폴더로 이동시켜주고, sass 파일이 변화하면 자동으로 태스크를 반복 실행합니다.  
   
+Gulp,Sass,LiveReload,BrowserSync 플러그인을 사용합니다.
+
 ```  
 git clone git@github.com:chain-partners/daybit-cs-freshdesk-style.git  
 npm install -g gulp  
@@ -69,7 +71,8 @@ npm install
 여기까지 로컬의 환경설정이 끝났습니다.  
   
 이제 개발환경 실행을 해 봅시다.  
-  
+터미널에서 아래의 명령을 적어주세요. 
+
 ```  
 gulp  
 ```  
