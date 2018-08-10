@@ -12,9 +12,17 @@
 	section.help-center {
 		text-align:center;
 
+		@include media('<=720px') {
+			text-align:left;
+		}
+
 		&.home {
 			border-radius:0;
 			padding:40px 0;
+
+			@include media('<=720px') {
+				padding:0;
+			}
 
 			h2.heading {
 				font-size:rem(32);
@@ -27,6 +35,9 @@
 				width:60%;
 				padding-right:0;
 
+				@include media('<=720px') {
+					width:100%;
+				}
 				.hc-search-form {
 					width:inherit;
 					text-align:center;
@@ -52,7 +63,7 @@
 
 .page {
 	// home 화면
-	section.main.content,
+	section.content,
 	section.sidebar.content {
 		h2.heading {
 			line-height:1.5;
@@ -72,4 +83,22 @@
 	.main .cs-g {
 		margin-bottom:15px;
 	}
+}
+
+
+section.content {
+	padding-top:30px;
+	padding-bottom:30px;
+}
+
+
+
+.page .fc-article-show h2.heading + p {
+	margin:12px 0;
+}
+
+section.help-center-sc {
+	border-color:#ddd;
+	border-left-width:0;
+	border-right-width:0;
 }

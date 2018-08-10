@@ -13,7 +13,6 @@ header.banner {
 	a {
 		font-size:rem(15);
 	}
-
 	// bi
 	.banner-title {
 		width:auto;
@@ -49,6 +48,10 @@ header.banner {
 
 		b {
 			vertical-align:middle;
+			a {
+				background:none;
+				border:none;
+			}
 		}
 
 		.caret {
