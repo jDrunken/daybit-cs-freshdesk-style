@@ -39,14 +39,21 @@
 {% if portal.current_tab and portal.current_tab != "home" %}
 	<section class="help-center-sc rounded-6">
 		<div class="page no-padding">
-		<div class="hc-search">
-			<div class="hc-search-c">
-				{% snippet search_form %}
+			<div class="hc-search">
+				<div class="hc-search-c">
+					{% snippet search_form %}
+				</div>
 			</div>
-		</div>
-		<div class="hc-nav {% if portal.contact_info %} nav-with-contact {% endif %}">
-			{{ portal | helpcenter_navigation }}
-		</div>
+			<div class="hc-nav {% if portal.contact_info %} nav-with-contact {% endif %}">
+				{{ portal | helpcenter_navigation }}
+			</div>
+			<script>
+				// gnb nav의 현재 활성화중인 링크 표시.
+				(function ($) {
+					$('html[lang="en"] .hc-nav a:contains("New support ticket") span').text('New Ticket');
+					$('html[lang="en"] .hc-nav a:contains("Check Ticket status") span').text('Ticket Status');
+				})(jQuery);
+			</script>
 		</div>
 	</section>
 {% endif %}

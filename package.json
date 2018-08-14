@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/chain-partners/daybit-cs-freshdesk-style#readme",
   "devDependencies": {
+    "browser-sync": "^2.24.6",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-base64": "^0.1.3",

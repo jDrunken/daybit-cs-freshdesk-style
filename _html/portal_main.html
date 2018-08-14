@@ -24,6 +24,9 @@
 // gnb nav의 현재 활성화중인 링크 표시.
 (function ($) {
 	$('nav.page-tabs a[href*="home"]').addClass('active');
+
+	$('html[lang="en"] .hc-nav a:contains("New support ticket") span').text('New Ticket');
+	$('html[lang="en"] .hc-nav a:contains("Check Ticket status") span').text('Ticket Status');
 })(jQuery);
 </script>
 {% endif %}
@@ -56,3 +59,4 @@
 <!-- 	{% endif %} -->
 <!-- </section> -->
 <!-- {% endif %} -->
+
