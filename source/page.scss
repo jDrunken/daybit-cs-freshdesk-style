@@ -35,9 +35,6 @@
 				width:60%;
 				padding-right:0;
 
-				@include media('<=720px') {
-					width:100%;
-				}
 				.hc-search-form {
 					width:inherit;
 					text-align:center;
@@ -51,14 +48,26 @@
 
 			.hc-nav > nav > div {
 				display:inline-block;
+				vertical-align:middle;
+				margin-left:1em;
+				line-height:25px;
 
 				a {
 					float:none;
+					display:inline;
+					padding:0;
 				}
 			}
 		}
 	}
+
 }
+	section.help-center-sc .hc-nav > nav > div {
+		display:inline-block;
+		vertical-align:middle;
+		margin-left:1em;
+		line-height:25px;
+	}
 
 
 .page {
@@ -79,7 +88,7 @@
 }
 
 
-@include media('>=45em') {
+@include media('>=720px') {
 	.main .cs-g {
 		margin-bottom:15px;
 	}
@@ -101,4 +110,85 @@ section.help-center-sc {
 	border-color:#ddd;
 	border-left-width:0;
 	border-right-width:0;
+}
+
+@media (max-width: 45em) {
+	.page-tabs > div.page {
+		padding:30px 10px;
+	}
+	section.help-center,
+	section.help-center-sc {
+		top:10px;
+		margin-top:0;
+		width:calc(100% - 60px);
+	}
+
+	.help-center div.hc-search-input,
+	.help-center-sc .hc-search div.hc-search-input {
+	 	width:100%;
+
+		input {
+			padding-right:45px;
+		}
+	}
+
+	.help-center-sc .hc-search div.hc-search-input input.special {
+		padding:6px 45px 6px 13px;
+	}
+
+	nav.page-tabs .nav-link {
+		margin-left:-10px;
+		top:106px;
+	}
+
+	.page section.help-center.home .hc-search,
+	section.help-center-sc div.hc-search {
+		float:none;
+		margin-right:0;
+		width:100% !important;
+		position:relative;
+	}
+
+	div.hc-nav {
+		float:none;
+		width:100%;
+	}
+
+	nav.page-tabs .nav-link a {
+		padding-left:20px !important;
+	}
+
+	div.hc-nav nav span {
+		display:inline;
+	}
+
+	section.help-center-sc .hc-search .hc-search-button {
+		width:30px;
+		margin-left:0;
+	}
+
+	.help-center-sc div.hc-nav {
+		float:none;
+		width:100%;
+	}
+
+	div.hc-nav nav a {
+		display:inline;
+		width:auto;
+	}
+
+	section.content {
+		margin-top:0;
+		padding:1em 2em;
+	}
+
+	.solution-print-icon:before {
+		margin-top:0;
+	}
+}
+
+@media (max-width: 370px) {
+	.page-tabs > div.page {
+		padding:10px 10px 70px;
+	}
 }
