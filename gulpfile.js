@@ -18,7 +18,10 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence'),
 
     // gulp-gh-pages
-    publish = require('gulp-gh-pages');
+    publish = require('gulp-gh-pages'),
+
+	// multi-browser test tool
+	browserSync = require('browser-sync');
 
 // --------------------------------------------------------------------------------
 // 환경설정
@@ -92,6 +95,19 @@ gulp.task('release', function () {
             message : 'Pushed Github Page'
         }))
 });
+
+
+// 멀티브라우저 테스트용 browser-sync test
+// 이게 가능할런지 모르겠다;
+// 이 기능은 좀 더 다듬어보고 넣던가 해야될거 같으네.
+// !!!! 프록시 기능 추가해야된다.
+gulp.task('cross',function () {
+	browserSync.init({
+
+	})
+});
+
+
 
 // --------------------------------------------------------------------------------
 // pipe running
