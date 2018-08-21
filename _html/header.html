@@ -43,6 +43,12 @@
 				<div class="hc-search-c">
 					{% snippet search_form %}
 				</div>
+				<script>
+					// gnb nav의 현재 활성화중인 링크 표시.
+					(function ($) {
+						$('html[lang="ko"] #support-search-input').attr('placeholder','문의사항을 검색해보세요!');
+					})(jQuery);
+				</script>
 			</div>
 			<div class="hc-nav {% if portal.contact_info %} nav-with-contact {% endif %}">
 				{{ portal | helpcenter_navigation }}
@@ -50,6 +56,9 @@
 			<script>
 				// gnb nav의 현재 활성화중인 링크 표시.
 				(function ($) {
+					$('html[lang="ko"] .hc-nav a:contains("신규 고객지원 티켓 작성") span').text('문의접수하기');
+					$('html[lang="ko"] .hc-nav a:contains("티켓 진행상황을 확인") span').text('문의진행상황');
+
 					$('html[lang="en"] .hc-nav a:contains("New support ticket") span').text('New Ticket');
 					$('html[lang="en"] .hc-nav a:contains("Check Ticket status") span').text('Ticket Status');
 				})(jQuery);

@@ -25,8 +25,11 @@
 (function ($) {
 	$('nav.page-tabs a[href*="home"]').addClass('active');
 
+	$('html[lang="ko"] .hc-nav a:contains("신규 고객지원 티켓 작성") span').text('문의접수하기');
+	$('html[lang="ko"] .hc-nav a:contains("티켓 진행상황을 확인") span').text('문의진행상황');
+
 	$('html[lang="en"] .hc-nav a:contains("New support ticket") span').text('New Ticket');
-	$('html[lang="en"] .hc-nav a:contains("Check Ticket status") span').text('Ticket Status');
+	$('html[lang="en"] .hc-nav a:contains("Check ticket status") span').text('Ticket Status');
 })(jQuery);
 </script>
 {% endif %}
@@ -59,4 +62,5 @@
 <!-- 	{% endif %} -->
 <!-- </section> -->
 <!-- {% endif %} -->
+
 
