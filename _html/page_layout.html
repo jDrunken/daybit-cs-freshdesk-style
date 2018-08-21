@@ -10,6 +10,12 @@
 					<h2 class="heading hide-in-mobile">Hello! DAY I help you?</h2>
 					{% snippet search_form %}
 				</div>
+				<script>
+					// gnb nav의 현재 활성화중인 링크 표시.
+					(function ($) {
+						$('html[lang="ko"] #support-search-input').attr('placeholder','문의사항을 검색해보세요!');
+					})(jQuery);
+				</script>
 			</div>
 			<div class="hc-nav {% if portal.contact_info %} nav-with-contact {% endif %}">
 				{{ portal | helpcenter_navigation }}
