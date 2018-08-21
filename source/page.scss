@@ -38,6 +38,7 @@
 				.hc-search-form {
 					width:inherit;
 					text-align:center;
+					border:1px solid transparent;
 
 					&:focus-within {
 						border-color:transparent;
@@ -114,11 +115,11 @@ section.help-center-sc {
 
 @media (max-width: 45em) {
 	.page-tabs > div.page {
-		padding:30px 10px;
+		padding:40px 10px;
 	}
 	section.help-center,
 	section.help-center-sc {
-		top:10px;
+		top:125px;
 		margin-top:0;
 		width:calc(100% - 60px);
 	}
@@ -138,7 +139,7 @@ section.help-center-sc {
 
 	nav.page-tabs .nav-link {
 		margin-left:-10px;
-		top:106px;
+		top:128px;
 	}
 
 	.page section.help-center.home .hc-search,
@@ -150,6 +151,7 @@ section.help-center-sc {
 	}
 
 	div.hc-nav {
+		margin-top:7px;
 		float:none;
 		width:100%;
 	}
@@ -184,6 +186,22 @@ section.help-center-sc {
 
 	.solution-print-icon:before {
 		margin-top:0;
+	}
+
+	.onfocus-mobile + .hc-nav {
+		display:block !important;
+	}
+
+	header.banner {
+		height:auto;
+	}
+
+	div.banner-wrapper.page {
+		min-height:0;
+		height:auto;
+		padding-top:30px;
+		padding-bottom:30px;
+		max-height:100px;
 	}
 }
 
