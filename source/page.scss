@@ -115,7 +115,7 @@ section.help-center-sc {
 
 @media (max-width: 45em) {
 	.page-tabs > div.page {
-		padding:40px 10px;
+		padding:40px 10px 13px;
 	}
 	section.help-center,
 	section.help-center-sc {
@@ -139,7 +139,7 @@ section.help-center-sc {
 
 	nav.page-tabs .nav-link {
 		margin-left:-10px;
-		top:128px;
+		top:101px;
 	}
 
 	.page section.help-center.home .hc-search,
@@ -158,6 +158,10 @@ section.help-center-sc {
 
 	nav.page-tabs .nav-link a {
 		padding-left:20px !important;
+	}
+
+	nav.page-tabs .mobile-icon-nav-menu {
+		transform:translateY(-15px);
 	}
 
 	div.hc-nav nav span {
@@ -199,8 +203,8 @@ section.help-center-sc {
 	div.banner-wrapper.page {
 		min-height:0;
 		height:auto;
-		padding-top:30px;
-		padding-bottom:30px;
+		padding-top:25px;
+		padding-bottom:25px;
 		max-height:100px;
 	}
 

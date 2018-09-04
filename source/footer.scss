@@ -200,10 +200,11 @@ footer .copyright {
 }
 
 @media (max-width:45em) {
-	.footer {
+	footer.footer {
 		margin-top: 0;
-		padding: 1em .5em
+		padding-bottom:27px;
 	}
+
 	.footer a {
 		padding-left: 10px;
 		padding: 0 10px;
@@ -213,6 +214,7 @@ footer .copyright {
 		display: inline-block;
 		margin-bottom: 10px
 	}
+
 	.footer a,
 	.footer a:hover {
 		color: #183247
@@ -225,6 +227,25 @@ footer .copyright {
 	.footer-links a:before {
 		content: none
 	}
+
+	footer.footer {
+		.external-links li:first-child {
+			margin-left:0;
+		}
+
+		.company-name a {
+			padding:0;
+		}
+
+		.company-name > div {
+			margin-top:1em;
+		}
+
+		> section {
+			margin-top:0;
+		}
+	}
+
 }
 
 // copyright

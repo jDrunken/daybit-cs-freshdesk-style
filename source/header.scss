@@ -16,6 +16,10 @@ header.banner {
 
 	a {
 		font-size:rem(15);
+		@media(max-width:45em) {
+			float:none;
+		}
+
 	}
 	// bi
 	.banner-title {
@@ -24,6 +28,9 @@ header.banner {
 
 		.portal-logo {
 			margin:0;
+			@media(max-width:45em) {
+				text-align:left;
+			}
 		}
 
 		.portal-img {
@@ -49,6 +56,11 @@ header.banner {
 	.banner-nav {
 
 		margin:0;
+		@media(max-width:45em) {
+			margin-top:10px;
+			text-align:left;
+		}
+
 
 		b {
 			vertical-align:middle;
@@ -56,6 +68,16 @@ header.banner {
 				background:none;
 				border:none;
 			}
+
+			@media(max-width:45em) {
+				a,
+				&:first-child {
+					padding-left:0;
+					margin-left:0;
+				}
+
+			}
+
 		}
 
 		.caret {

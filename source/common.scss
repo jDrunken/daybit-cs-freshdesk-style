@@ -73,3 +73,10 @@
 		}
 	}
 }
+
+// 강제 설정
+@media (max-width: 45em) {
+	.hide-in-mobile {
+		display: none !important
+	}
+}
