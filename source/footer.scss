@@ -137,8 +137,13 @@ footer .copyright,footer .person-info {
 
 footer .info-items {
     display: flex;
+	color: #777;
+    font-size: 11px;
+	letter-spacing:-0.02rem;
+	align-items:center;
 
 	li {
+		position:relative;
 		padding: 0 15px;
 
 		&:first-child {
@@ -147,6 +152,25 @@ footer .info-items {
 
 		&:last-child {
 			padding-right: 0;
+		}
+
+		&:after {
+			content:'';
+			height:13px;
+			width:1px;
+			background:#cacaca;
+			position:absolute;
+			top:50%;
+			transform:translateY(-50%);
+			right:0;
+		}
+
+		&:last-child:after {
+			display:none;
+		}
+
+		a {
+			padding:0;
 		}
 	}
 }
@@ -183,25 +207,12 @@ footer .company-name a,footer .company-name a:visited {
     font-size: 13px;
     font-weight: 700;
     color: #777;
-    letter-spacing: -1px
-}
-
-footer .info-items li {
-	color: #777;
-    font-size: 11px;
-    border-right: 1px solid #cacaca;
-	letter-spacing:-0.02rem;
-    line-height: 0.8;
-    margin: 7px 0;
-}
-
-footer .info-items li:last-child {
-    border-right: none
+    letter-spacing: -1px;
 }
 
 footer .copyright {
     font-size: 12px;
-    color: #888
+    color: #888;
 }
 
 .footer {
@@ -237,15 +248,17 @@ footer .copyright {
 		margin-left: 4px;
 		line-height: 24px;
 		display: inline-block;
-		margin-bottom: 10px
+		margin-bottom: 10px;
 	}
 
 	.footer a,
 	.footer a:hover {
-		color: #183247
+		color: #183247 !important;
 	}
+
 	.footer .footer-links a {
 	}
+
 	.footer-links {
 		text-align: center
 	}
@@ -282,12 +295,16 @@ footer .copyright {
 	footer.footer .info-items {
 		flex-direction:column;
 		margin-top:1em;
-
+		align-items:flex-start;
 		li {
 			padding:0;
 			margin:0;
 			border:0;
 			line-height:1.5;
+
+			&:after {
+				display:none;
+			}
 		}
 	}
 }
