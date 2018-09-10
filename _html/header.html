@@ -6,6 +6,12 @@
 		<div class="banner-wrapper page">
 			<div class="banner-title">
 				{{ portal | logo }}
+				<script>
+				// 링크 변경
+				(function ($) {
+					$('a.portal-logo').attr('href','//daybit.com');
+				})(jQuery);
+				</script>
 			</div>
 			<nav class="banner-nav">
 				{{ portal | welcome_navigation }}
@@ -79,4 +85,5 @@
 <!-- 헤더 -->
 <!-- 헤더 -->
 <!-- 헤더 -->
+
 

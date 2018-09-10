@@ -17,15 +17,16 @@ nav.page-tabs {
 			}
 
 			&:hover {
-				border-top:0;
-				border-bottom:3px solid rgba(0, 35, 70, 0.5);
-				padding:6px 6px 3px 6px;
-				font-weight:500;
+				border-top-width:3px;
+				border-top-color:transparent;
+			//     border-bottom:3px solid rgba(0, 35, 70, 0.5);
+			//     padding:6px 6px 3px 6px;
+			//     font-weight:500;
 			}
 
-			&.active:hover {
-				border-color:#002248;
-			}
+			// &.active:hover {
+			//     border-color:#002248;
+			// }
 		}
 	}
 }

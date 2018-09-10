@@ -6,8 +6,19 @@
 header {}
 
 
-header.banner {
+header div.page {
+	max-width:1140px;
 
+	@include media ('<1200px') {
+		padding-left:20px;
+		padding-right:20px;
+	}
+
+	padding-top:4px;
+	padding-bottom:4px;
+}
+
+header.banner {
 
 	@media (max-width: 45em) {
 		height:152px;
@@ -63,10 +74,11 @@ header.banner {
 
 
 		b {
-			vertical-align:middle;
 			a {
 				background:none;
 				border:none;
+				line-height:24px;
+				font-size:rem(14);
 			}
 
 			@media(max-width:45em) {
@@ -85,6 +97,7 @@ header.banner {
 		}
 
 		.banner-language-selector {
+			top:0;
 			margin:0 0 0 10px;
 
 			.dropdown-toggle {
@@ -93,6 +106,7 @@ header.banner {
 				border: 1px solid hsla(0,0%,100%,.35);
 				border-radius: 2px;
 				height: 24px;
+				line-height:22px;
 				width: 75px;
 				padding: 0;
 				font-size: 13px;
@@ -105,7 +119,35 @@ header.banner {
 				right:0;
 				left:0;
 				border-radius:2px;
+				padding:0;
+
+				li a {
+					font-size:13px;
+					height:34px;
+					line-height:34px;
+					text-align:center;
+					display:inline-block;
+					padding:0;
+					width:100%;
+
+					border-radius:0;
+					margin-left:0;
+
+					&:after {
+						display:none;
+					}
+				}
 			}
 		}
 	}
 }
+
+
+
+
+// ticker
+
+.banner-nav .banner-language-selector .language-options .dropdown-menu a .icon-dd-tick-dark {
+	display:none;
+}
+

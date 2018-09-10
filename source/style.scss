@@ -2,18 +2,22 @@
 
 
 // font embed :: google webfont;
-// @import url('//fonts.googleapis.com/css?family=Roboto:300,400,500,600,700');
-// @import url('//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+@import url('//fonts.googleapis.com/css?family=Noto+Sans+KR|Roboto');
 // 직접 불러오도록 head 안에 기술함. chrome devtools override로 하면 자꾸 충돌이 나서...
 
 //
 
 @import 'env.scss';
 
+// reset, re-declarataion
+html > body {
+	color:#222;
+    background-color: #eff0f2;
+    font-family: Roboto,Noto Sans KR,Apple SD Gothic Neo,돋움,Dotum,sans-serif;
+}
+
 @import 'header.scss';
 @import 'nav.scss';
 @import 'footer.scss';
-
 @import 'page.scss';
-
 @import 'common.scss';

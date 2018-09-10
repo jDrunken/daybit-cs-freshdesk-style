@@ -7,7 +7,14 @@
 		<section class="help-center home">
 			<div class="hc-search">
 				<div class="hc-search-c">
-					<h2 class="heading hide-in-mobile">Hello! DAY I help you?</h2>
+					<h2 class="heading hide-in-mobile">
+					{% if portal.current_language.code == "ko" %}
+					고객지원센터
+					{% elsif portal.current_language.code == "en" %}
+					Customer Support Center
+					{% endif %}
+					</h2>
+
 					{% snippet search_form %}
 				</div>
 				<script>
@@ -17,9 +24,11 @@
 					})(jQuery);
 				</script>
 			</div>
+			{% if portal.user %}
 			<div class="hc-nav {% if portal.contact_info %} nav-with-contact {% endif %}">
 				{{ portal | helpcenter_navigation }}
 			</div>
+			{% endif %}
 		</section>
 	{% endif %}
 

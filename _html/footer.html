@@ -35,7 +35,13 @@
         </nav>
     </div>
     <section class="company-name">
-        <div><a href="http://www.chain.partners" target="_blank" rel="noopener">DAYBIT Inc.</a></div>
+        <div><a href="http://www.chain.partners" target="_blank" rel="noopener">
+				{% if portal.current_language.code == "en" %}
+					DAYBIT Inc.
+				{% elsif portal.current_language.code == "ko" %}
+					(주) 데이빗
+				{% endif %}
+			</a></div>
     </section>
     <section class="administrative-info">
         <ul class="info-items">

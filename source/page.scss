@@ -6,11 +6,20 @@
 .page {}		// namespace
 
 
+div.page {
+	max-width:1000px;
+	padding-left:0;
+	padding-right:0;
+}
+
 // header + nav + help-center
 // 검색과 간단한 로그인이 있는 섹션
 .page {
 	section.help-center {
+		background-color:transparent;
 		text-align:center;
+		border-bottom:0;
+		margin-bottom:0;
 
 		@include media('<=720px') {
 			text-align:left;
@@ -18,7 +27,7 @@
 
 		&.home {
 			border-radius:0;
-			padding:40px 0;
+			padding:40px 0 20px;
 
 			@include media('<=720px') {
 				padding:0;
@@ -28,7 +37,7 @@
 				font-size:rem(32);
 				line-height:1;
 				color:#002248;
-				text-shadow:0 0 4px rgba(0, 34, 72, 0.4);
+				// text-shadow:0 0 4px rgba(0, 34, 72, 0.4);
 			}
 
 			.hc-search {
@@ -61,7 +70,6 @@
 			}
 		}
 	}
-
 }
 	section.help-center-sc .hc-nav > nav > div {
 		display:inline-block;
@@ -220,4 +228,271 @@ section.help-center-sc {
 	.page-tabs > div.page {
 		padding:10px 10px 70px;
 	}
+}
+
+
+
+
+// --------------------------------------------------------------------------------
+// 각종 링크의 아이콘 삭제
+// --------------------------------------------------------------------------------
+.ficon-solution-article-new:before,
+.article-list ul li:before,
+.search-results-list li.article-item:before,
+ul.ui-autocomplete li.article-item:before {
+	display:none;
+}
+
+.article-list li,
+.topic-list li,
+.ticket-list li,
+a.see-more {
+	padding-left:0;
+}
+
+
+
+
+// --------------------------------------------------------------------------------
+// article-view layout에서 연관글을 아래로 내림
+// --------------------------------------------------------------------------------
+section.main {
+	width:auto;
+	float:none;
+}
+
+section.sidebar {
+	width:auto;
+	min-height:auto !important;
+	float:none;
+}
+
+
+
+
+
+// --------------------------------------------------------------------------------
+// unset all rounded
+// --------------------------------------------------------------------------------
+.rounded-6,
+.c-wrapper,
+.help-center .hc-search-form,
+div.hc-search-input input.special {
+	border-radius:0 !important;
+}
+
+
+
+
+// --------------------------------------------------------------------------------
+// article front color
+// --------------------------------------------------------------------------------
+.article-body {
+	> p {
+		color:#666 !important;
+		> span {
+			color:#666 !important;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+// --------------------------------------------------------------------------------
+// article spacing
+// --------------------------------------------------------------------------------
+.article-body {
+	p,
+	li,
+	div,
+	blockquote {
+		line-height:1.7;
+	}
+
+	p {
+		margin-bottom:1em;
+	}
+
+	blockquote {
+		margin-left:0;
+		margin-right:0;
+		padding-top:0;
+		padding-bottom:0;
+	}
+
+	li {
+		margin-bottom:0.3em;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+// --------------------------------------------------------------------------------
+// table re-declarataion
+// --------------------------------------------------------------------------------
+
+.article-body {
+	table {
+		border-spacing:0;
+		border-collapse:collapse;
+		width:100%;
+	}
+
+	th,td {
+		border:1px solid #f4f4f4 !important;
+		text-align:center;
+	}
+
+	th {
+		background-color:#f4f4f4;
+		font-size:rem(13);
+		color:#888;
+		font-weight:400;
+
+		* {
+			font-size:inherit;
+			color:#888;
+			font-weight:400;
+		}
+	}
+
+	td {
+		color:#444;
+
+		* {
+			color:inherit !important;
+		}
+	}
+
+	thead th,
+	tbody th,
+	tbody td {
+		padding-top:9px;
+		padding-bottom:9px;
+	}
+
+	// test for mobile table
+	@include media ('<768px') {
+		div.responsible {
+			width:100%;
+			overflow:auto;
+		}
+
+		table {
+		}
+
+		th,td {
+			white-space:nowrap;
+		}
+
+		tr > *:first-child {
+			position:sticky;
+			left:-1px;
+			z-index:2;
+		}
+
+		tr > td:first-child {
+			background-color:#fff;
+		}
+	}
+
+
+
+
+}
+
+
+
+
+// --------------------------------------------------------------------------------
+// link
+// --------------------------------------------------------------------------------
+
+section.cs-g.article-list ul li {
+	a:link {
+		color:#222 !important;
+	}
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+
+
+div.cs-s h2.heading a,
+.links-inherit a,
+div.list-lead a,
+.ellipsis a {
+	color:#888;
+
+	&:hover {
+		color:#666;
+		text-decoration:underline;
+	}
+}
+
+
+a.see-more,
+div.breadcrumb a,
+.ficon-thumbs-down, .article-vote .vote-down,
+.ficon-thumbs-down, .article-vote .vote-up {
+	color:#00bcb5;
+
+	&:hover {
+		color:#00bcb5;
+		text-decoration:underline;
+	}
+}
+
+
+
+
+// --------------------------------------------------------------------------------
+// font-family inherit for body
+// --------------------------------------------------------------------------------
+
+h2.heading,
+.lead,
+.lead-smalll,
+h3.list-lead {
+	font-family:inherit;
+}
+
+
+// --------------------------------------------------------------------------------
+// printing icon
+// --------------------------------------------------------------------------------
+
+.ficon-print,
+.solution-print-icon {
+	margin-top:9px;
+}
+
+.ficon-print:after,
+.solution-print-icon:after {
+	line-height:26px;
+}
+
+
+
+// --------------------------------------------------------------------------------
+// list style
+// --------------------------------------------------------------------------------
+.article-body ol,
+.article-body ul {
+	padding-left:20px;
 }
