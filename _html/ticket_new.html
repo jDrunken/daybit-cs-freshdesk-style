@@ -8,79 +8,102 @@
 		$('html[lang="en"] label[for="helpdesk_ticket_ticket_type"]').text('Type');
 		$('html[lang="en"] label[for="helpdesk_ticket_description"]').text('Contents');
 
-		$('html[lang="en"] label[for="helpdesk_ticket_cf_wetmdkmvdks_856766"]').text('Specific');
+		// 세부유형
+		// $('html[lang="en"] label[for="helpdesk_ticket_cf_wetmdkmvdks_856766"]').text('Subbytes');
 
-		$('html[lang="en"] option[value="회원가입 및 탈퇴"]').text('Join and Withdrawal');
-		$('html[lang="en"] option[value="로그인 및 로그아웃"]').text('Login & Logout');
-		$('html[lang="en"] option[value="계정인증"]').text('Account Oauth');
-		$('html[lang="en"] option[value="정보변경"]').text('Change Personal Modification');
-		$('html[lang="en"] option[value="입금 및 출금"]').text('Deposit and withdrawal');
-		$('html[lang="en"] option[value="거래"]').text('Deal');
-		$('html[lang="en"] option[value="해킹 및 보이스피싱"]').text('Hack & Voice-fishing');
-		$('html[lang="en"] option[value="제휴 및 마케팅"]').text('Affiliate & Marketing');
+		// 1depth
+		$('html[lang="en"] option[value="회원가입 및 탈퇴"]').text('Sign Up / Cancel Account');
+		$('html[lang="en"] option[value="로그인 및 로그아웃"]').text('Login / Logout');
+		$('html[lang="en"] option[value="계정인증"]').text('Account Verification');
+		$('html[lang="en"] option[value="계정정보 변경"]').text('Edit Account Information');
+		$('html[lang="en"] option[value="입금 및 출금"]').text('Deposit / Withdrawal');
+		$('html[lang="en"] option[value="거래"]').text('Transaction');
+		$('html[lang="en"] option[value="해킹 및 보이스피싱"]').text('Hacking / Fishing');
+		$('html[lang="en"] option[value="제휴 및 마케팅"]').text('Partnership / Marketing');
+		$('html[lang="en"] option[value="채굴 보상"]').text('Mining / Reward');
+		$('html[lang="en"] option[value="기타"]').text('Etc');
+
+
 
 		$(function() {
 			// type의 selectbox를 클릭했을때
 			$('#helpdesk_ticket_ticket_type').on('change',function () {
-				// 1 depth select
-				$('html[lang="en"] label:contains("세부유형")').text('Specific');
-				$('html[lang="en"] label:contains("암호화폐")').text('Crypto Currency');
-				$('html[lang="en"] label:contains("수량")').text('Amount');
-				$('html[lang="en"] label:contains("출금주소")').text('Withdraw address');
-				$('html[lang="en"] label:contains("입금주소")').text('Deposit address');
-				$('html[lang="en"] label:contains("코인명")').text('Coin name');
+
+				// common
+				//// description
+				var attachDescription = $('html[lang="en"] label:contains("오류 발생 시 오류화면의 스크린샷을 첨부해주세요.")');
+				if (!!attachDescription.length) {
+					$(attachDescription).html(
+						$(attachDescription).html().replace('오류 발생 시 오류화면의 스크린샷을 첨부해주세요.','Please attach a screenshot in case of error.')
+					);
+				}
+				$('label:contains("세부유형")').text('Subtype');
+
 
 				// 2 depth select
-				$('html[lang="en"] label:contains("세부항목")').text('Case');
+				// ---------------------------------------------------------------------------------------------
 
-				$('html[lang="en"] option[value="회원가입"]').text('Join');
-				$('html[lang="en"] option[value="회원탈퇴"]').text('Secession');
-				$('html[lang="en"] option[value="법인 회원가입"]').text('Join Corporation');
+				// 회원가입
+				$('html[lang="en"] option[value="회원가입"]').text('Sign up');
+				$('html[lang="en"] option[value="회원탈퇴"]').text('Cancel Account');
 
-				$('html[lang="en"] option[value="로그인"]').text('Login');
-				$('html[lang="en"] option[value="로그아웃"]').text('Logout');
+				// 계정인증
+				$('html[lang="en"] option[value="이메일인증"]').text('E-mail Verification');
+				$('html[lang="en"] option[value="휴대폰인증"]').text('Phone Verification');
+				$('html[lang="en"] option[value="KYC(신분증) 인증"]').text('KYC Verification');
 
-				$('html[lang="en"] option[value="이메일인증"]').text('Email authrize');
-				$('html[lang="en"] option[value="휴대폰인증"]').text('Mobile authrize');
-				$('html[lang="en"] option[value="OTP인증"]').text('OTP authrize');
-				$('html[lang="en"] option[value="외국인/해외거주 한국인 인증"]').text('Korean authrize for foreigner / overseas');
+				// 입금 및 출금
+				//// static labels
+				$('html[lang="en"] label:contains("암호화폐")').text('Cryptocurrency');
+				$('html[lang="en"] label:contains("수량")').text('Amount');
+				$('html[lang="en"] label:contains("출금주소")').text('Withdrawal Address');
+				$('html[lang="en"] label:contains("입금주소")').text('Deposit Address');
 
-				$('html[lang="en"] option[value="패스워드"]').text('Password');
-				$('html[lang="en"] option[value="전화번호"]').text('Tel');
-				$('html[lang="en"] option[value="이메일"]').text('eMail');
-				$('html[lang="en"] option[value="계정 잠금/해제"]').text('Account lock/unlock');
-				$('html[lang="en"] option[value="기타"]').text('etc...');
+				//// select option
+				$('html[lang="en"] option[value="휴대폰 인증"]').text('Phone Verification');
+				// $('label:contains("\(개인 정보 수집 및 이용에 대한 동의\) DAYBIT은 거래 내역을 비교하고 확인하기 위한 목적으로 인출 지갑 주소, 예금 지갑 주소, 금액 및 거래 ID를 수집합니다. 수집된 정보는 3년간 보관된 후 파기될 것입니다.")').html(
+				//     $('label:contains("\(개인 정보 수집 및 이용에 대한 동의\) DAYBIT은 거래 내역을 비교하고 확인하기 위한 목적으로 인출 지갑 주소, 예금 지갑 주소, 금액 및 거래 ID를 수집합니다. 수집된 정보는 3년간 보관된 후 파기될 것입니다.")').html().replace('\(개인 정보 수집 및 이용에 대한 동의\) DAYBIT은 거래 내역을 비교하고 확인하기 위한 목적으로 인출 지갑 주소, 예금 지갑 주소, 금액 및 거래 ID를 수집합니다. 수집된 정보는 3년간 보관된 후 파기될 것입니다.','\(DAYBIT Personal Data Collection and Usage Agreement\) DAYBIT collects data including withdrawal address, deposit address, wallet address, and transaction amount and ID for the purpose of analyzing transaction details. DAYBIT shall dispose all collected data after the retention period of three years required by the relevant laws.')
+				// );
 
-				$('html[lang="en"] label:contains("신분증, 신분증을 들고 있는 사진, 증빙자료를 첨부해주세요.")').text('Please attach identification, ID photo, and supporting documents.');
+				// 거래
 
 
-				$('html[lang="en"] option[value="거래기록"]').text('Transaction History');
-				$('html[lang="en"] option[value="지갑"]').text('Wallet');
-				$('html[lang="en"] option[value="수수료"]').text('Commission');
-				$('html[lang="en"] option:contains("차트&분석")').text('Chart & Analizying');
+				// 해킹 및 보이스피싱
+				$('html[lang="en"] option[value="해킹"]').text('Hacking');
+				$('html[lang="en"] option[value="보이스피싱"]').text('Fishing');
 
-				$('html[lang="en"] option[value="해킹"]').text('Hack');
-				$('html[lang="en"] option[value="보이스피싱"]').text('Voice-fishing');
-
+				// 제휴 및 마케팅
 				$('html[lang="en"] option[value="이벤트"]').text('Event');
 				$('html[lang="en"] option[value="상장관련"]').text('Listing');
-				$('html[lang="en"] option[value="제휴"]').text('Affiliate');
+				$('html[lang="en"] option[value="제휴"]').text('Partnership');
 
+				// API
 				$('html[lang="en"] option[value="API 오류"]').text('API error');
-				$('html[lang="en"] option[value="API 속도제한 조정"]').text('API Speed limit handling');
+				$('html[lang="en"] option[value="API 삭제"]').text('API delete');
 
-				$('html[lang="en"] option[value="문의"]').text('Ask');
-				$('html[lang="en"] option[value="요청"]').text('Request');
-				$('html[lang="en"] option[value="오류"]').text('Error');
-				$('html[lang="en"] option[value="불만"]').text('Dissatisfaction');
+				// 채굴 보상
+				$('html[lang="en"] option[value="채굴"]').text('Mining');
+				$('html[lang="en"] option[value="보상"]').text('Reward');
 
-				//3depth select
 
+
+
+				// 2 depth select click > 3 depth select value changed
+				// ---------------------------------------------------------------------------------------------
+				$('div.controls.nested_field > select').on('change',function () {
+
+					// static description label
+					$('div.controls.nested_field > div.level_2 > label:contains("세부항목")').on('change',function () {
+						console.log('changed');
+					});
+				});
 			});
 		});
 
 	})(jQuery);
+
 	</script>
 </section>
+
 
 
