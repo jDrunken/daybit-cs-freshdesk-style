@@ -31,10 +31,13 @@
 
 				// common
 				//// description
-				var attachDescription = $('html[lang="en"] label:contains("오류 발생 시 오류화면의 스크린샷을 첨부해주세요.")');
-				if (!!attachDescription.length) {
-					$(attachDescription).html(
-						$(attachDescription).html().replace('오류 발생 시 오류화면의 스크린샷을 첨부해주세요.','Please attach a screenshot in case of error.')
+				var attachDesc = {};
+				attachDesc.text = "오류 발생 시 오류화면의 스크린샷을 첨부해주세요.";
+				attachDesc.obj = $('html[lang="en"] label:contains("'+attachDesc.text+'")');
+				attachDesc.en = 'Please attach a screenshot in case of error.';
+				if (!!attachDesc.obj.length) {
+					$(attachDesc.obj).html(
+						$(attachDesc.obj).html().replace(attachDesc.text,attachDesc.en)
 					);
 				}
 				$('label:contains("세부유형")').text('Subtype');
@@ -61,21 +64,35 @@
 
 				//// select option
 				$('html[lang="en"] option[value="휴대폰 인증"]').text('Phone Verification');
-				// $('label:contains("\(개인 정보 수집 및 이용에 대한 동의\) DAYBIT은 거래 내역을 비교하고 확인하기 위한 목적으로 인출 지갑 주소, 예금 지갑 주소, 금액 및 거래 ID를 수집합니다. 수집된 정보는 3년간 보관된 후 파기될 것입니다.")').html(
-				//     $('label:contains("\(개인 정보 수집 및 이용에 대한 동의\) DAYBIT은 거래 내역을 비교하고 확인하기 위한 목적으로 인출 지갑 주소, 예금 지갑 주소, 금액 및 거래 ID를 수집합니다. 수집된 정보는 3년간 보관된 후 파기될 것입니다.")').html().replace('\(개인 정보 수집 및 이용에 대한 동의\) DAYBIT은 거래 내역을 비교하고 확인하기 위한 목적으로 인출 지갑 주소, 예금 지갑 주소, 금액 및 거래 ID를 수집합니다. 수집된 정보는 3년간 보관된 후 파기될 것입니다.','\(DAYBIT Personal Data Collection and Usage Agreement\) DAYBIT collects data including withdrawal address, deposit address, wallet address, and transaction amount and ID for the purpose of analyzing transaction details. DAYBIT shall dispose all collected data after the retention period of three years required by the relevant laws.')
-				// );
+
+				// 동의용 디스크립션
+				var agree = {};
+				// agree.text = '(개인 정보 수집 및 이용에 대한 동의) DAYBIT은 거래 내역을 비교하고 확인하기 위한 목적으로 인출 지갑 주소, 예금 지갑 주소, 금액 및 거래 ID를 수집합니다. 수집된 정보는 3년간 보관된 후 파기될 것입니다.';
+				agree.text = '개인 정보 수집 및 이용에 대한 동의';
+				agree.en = '(DAYBIT Personal Data Collection and Usage Agreement) DAYBIT collects data including withdrawal address, deposit address, wallet address, and transaction amount and ID for the purpose of analyzing transaction details. DAYBIT shall dispose all collected data after the retention period of three years required by the relevant laws.';
+				agree.obj = $('html[lang="en"] label:contains('+agree.text+')');
+				if (!!agree.obj.length) {
+					$(agree.obj).html(
+						$(agree.obj).html().replace(/>.+/gi,'>'+agree.en)
+
+					)
+				}
 
 				// 거래
+				$('html[lang="en"] option[value="수수료"]').text('Fee');
+				$('html[lang="en"] option[value="매수"]').text('Buy');
+				$('html[lang="en"] option[value="매도"]').text('Sell');
 
 
 				// 해킹 및 보이스피싱
 				$('html[lang="en"] option[value="해킹"]').text('Hacking');
 				$('html[lang="en"] option[value="보이스피싱"]').text('Fishing');
+				$('html[lang="en"] option[value="미 확인 입출금"]').text('Unknown Withdrawal/Deposit');
 
 				// 제휴 및 마케팅
 				$('html[lang="en"] option[value="이벤트"]').text('Event');
 				$('html[lang="en"] option[value="상장관련"]').text('Listing');
-				$('html[lang="en"] option[value="제휴"]').text('Partnership');
+				$('html[lang="en"] option[value="제휴"]').text('Affiliate');
 
 				// API
 				$('html[lang="en"] option[value="API 오류"]').text('API error');
@@ -92,16 +109,52 @@
 				// ---------------------------------------------------------------------------------------------
 				$('div.controls.nested_field > select').on('change',function () {
 
-					// static description label
-					$('div.controls.nested_field > div.level_2 > label:contains("세부항목")').on('change',function () {
-						console.log('changed');
-					});
+
+					// static label description
+					$('div.controls.nested_field > div.level_2 > label:contains("세부항목")').text('Subtype');
+
+
+					// 여기서 3depth의 통제가 가능한가?
+					var _done = false;
+					var changeDescription = setInterval(function () {
+						if (!!_done) {
+							clearInterval(changeDescription);
+						} else {
+							// 모든 경우를 loop 돌리는게 맘에 들지는 않지만...
+							$('html[lang="en"] option[value="지갑에 \"잔여 코인\"이 있는경우 탈퇴가 불가능합니다."]').text('You are unable to cancel your membership, if there is remaining coin in your wallet');
+
+							$('html[lang="en"] option[value="여권"]').text('Passport');
+							$('html[lang="en"] option[value="주민등록증"]').text('Registration card');
+							$('html[lang="en"] option[value="운전면허증"]').text('Driver\'s license');
+
+							$('html[lang="en"] option[value="즉시매수"]').text('Instant Buy');
+							$('html[lang="en"] option[value="조건매수"]').text('Conditional Buy');
+							$('html[lang="en"] option[value="즉시매도"]').text('Instant Sell');
+							$('html[lang="en"] option[value="조건매도"]').text('Conditional Sell');
+
+							$('html[lang="en"] option[value="증빙자료 첨부"]').text('Attach Documentation');
+							$('html[lang="en"] option[value="전화 (증빙자료 첨부)"]').text('Phone Call (Attach Documentation)');
+							$('html[lang="en"] option[value="메세지 (증빙자료 첨부)"]').text('Message (Attach Documentation');
+
+							$('html[lang="en"] option[value="에어드랍"]').text('Air-drop');
+							$('html[lang="en"] option[value="DAY토큰"]').text('DAY Token');
+
+							$('html[lang="en"] option[value="한 번 삭제된 KEY는 복구되지 않으며 사용할 수 없게됩니다."]').text('The API Key cannot be recovered once deleted.');
+
+							$('html[lang="en"] option[value="거래기반 채굴"]').text('Trade-driven Mining');
+							$('html[lang="en"] option[value="초대기반 채굴"]').text('Referral-driven Mining');
+
+							$('html[lang="en"] option[value="거래기반 보상"]').text('Transaction-driven Rewards');
+							$('html[lang="en"] option[value="초대기반 보상"]').text('Referral-driven Rewards');
+							_done = true;
+						}
+					},50);
+
 				});
 			});
 		});
 
 	})(jQuery);
-
 	</script>
 </section>
 
