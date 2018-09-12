@@ -281,20 +281,24 @@ div.hc-search-input input.special {
 	border-radius:0 !important;
 }
 
+.c-wrapper {
+	box-shadow:0 0 0;
+}
 
 
 
 // --------------------------------------------------------------------------------
 // article front color
 // --------------------------------------------------------------------------------
-.article-body {
-	> p {
-		color:#666 !important;
-		> span {
-			color:#666 !important;
-		}
-	}
-}
+// 텍스트 본문의 컬러도 롤백을 원하심
+// .article-body {
+//     > p {
+//         color:#666 !important;
+//         > span {
+//             color:#666 !important;
+//         }
+//     }
+// }
 
 
 
@@ -307,29 +311,37 @@ div.hc-search-input input.special {
 // --------------------------------------------------------------------------------
 // article spacing
 // --------------------------------------------------------------------------------
-.article-body {
-	p,
-	li,
-	div,
-	blockquote {
-		line-height:1.7;
-	}
+// wysiwig editor와 매칭되어 보였으면 하셔서 삭제함.
+// .article-body {
+//     p,
+//     li,
+//     div,
+//     blockquote {
+//         line-height:1.7;
+//     }
 
-	p {
-		margin-bottom:1em;
-	}
+//     p {
+//         margin-bottom:1em;
+//     }
 
-	blockquote {
-		margin-left:0;
-		margin-right:0;
-		padding-top:0;
-		padding-bottom:0;
-	}
+//     blockquote {
+//         margin-left:0;
+//         margin-right:0;
+//         padding-top:0;
+//         padding-bottom:0;
+//     }
 
-	li {
-		margin-bottom:0.3em;
-	}
-}
+//     li {
+//         margin-bottom:0.3em;
+//     }
+// }
+
+// list style
+
+// .article-body ol,
+// .article-body ul {
+//     padding-left:20px;
+// }
 
 
 
@@ -489,10 +501,3 @@ h3.list-lead {
 
 
 
-// --------------------------------------------------------------------------------
-// list style
-// --------------------------------------------------------------------------------
-.article-body ol,
-.article-body ul {
-	padding-left:20px;
-}
