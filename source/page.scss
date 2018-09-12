@@ -1,3 +1,4 @@
+$emerald:#00bcb5;
 // --------------------------------------------------------------------------------
 // page
 // 본문 섹션
@@ -51,32 +52,48 @@ div.page {
 
 					&:focus-within {
 						border-color:transparent;
-						box-shadow:0 0 5px rgba(44, 71, 102, 1.000);
+						box-shadow:0 0 0;
 					}
 				}
 			}
 
-			.hc-nav > nav > div {
-				display:inline-block;
-				vertical-align:middle;
-				margin-left:1em;
-				line-height:25px;
 
-				a {
-					float:none;
-					display:inline;
-					padding:0;
-				}
-			}
 		}
 	}
 }
-	section.help-center-sc .hc-nav > nav > div {
-		display:inline-block;
-		vertical-align:middle;
-		margin-left:1em;
-		line-height:25px;
+
+.hc-nav > nav > div {
+	display:inline-block;
+	vertical-align:middle;
+	margin-left:1em;
+	line-height:25px;
+
+	a {
+		float:none;
+		display:inline;
+		padding:0;
 	}
+
+	a span:hover {
+		color:$emerald;
+	}
+
+	a:before {
+		vertical-align:middle;
+	}
+	a span {
+		line-height:22px;
+		vertical-align:middle;
+		display:inline;
+	}
+}
+
+section.help-center-sc .hc-nav > nav > div {
+	display:inline-block;
+	vertical-align:middle;
+	margin-left:1em;
+	line-height:25px;
+}
 
 
 .page {
@@ -85,7 +102,6 @@ div.page {
 	section.sidebar.content {
 		h2.heading {
 			line-height:1.5;
-			border-bottom:1px solid #DADFE3;
 			padding-bottom:0.4em;
 
 			a:hover {
@@ -259,6 +275,11 @@ a.see-more {
 section.main {
 	width:auto;
 	float:none;
+	border:0;
+}
+
+section.main.min-height-on-desktop {
+	min-height:auto;
 }
 
 section.sidebar {
@@ -283,6 +304,7 @@ div.hc-search-input input.special {
 
 .c-wrapper {
 	box-shadow:0 0 0;
+	border:0;
 }
 
 
@@ -403,8 +425,7 @@ div.hc-search-input input.special {
 			overflow:auto;
 		}
 
-		table {
-		}
+		table {}
 
 		th,td {
 			white-space:nowrap;
@@ -423,7 +444,6 @@ div.hc-search-input input.special {
 
 
 
-
 }
 
 
@@ -433,41 +453,18 @@ div.hc-search-input input.special {
 // link
 // --------------------------------------------------------------------------------
 
-section.cs-g.article-list ul li {
-	a:link {
-		color:#222 !important;
-	}
+// section.cs-g.article-list ul li {
+//     a:link {
+//         color:#666 !important;
+//     }
+// }
+
+.c-row:hover {
+	background-color:#f9f9fa;
 }
 
 a:hover {
 	text-decoration:underline;
-}
-
-
-
-div.cs-s h2.heading a,
-.links-inherit a,
-div.list-lead a,
-.ellipsis a {
-	color:#888;
-
-	&:hover {
-		color:#666;
-		text-decoration:underline;
-	}
-}
-
-
-a.see-more,
-div.breadcrumb a,
-.ficon-thumbs-down, .article-vote .vote-down,
-.ficon-thumbs-down, .article-vote .vote-up {
-	color:#00bcb5;
-
-	&:hover {
-		color:#00bcb5;
-		text-decoration:underline;
-	}
 }
 
 
@@ -501,3 +498,110 @@ h3.list-lead {
 
 
 
+
+// --------------------------------------------------------------------------------
+// 솔루션 리스트 처리
+// --------------------------------------------------------------------------------
+ .c-article-row .icon-article-table-row {
+	 display:none;
+	 // border-right:1px solid rgba(0,0,0,0.1);
+	 // box-shadow:0 0 0 0;
+ }
+
+
+ // --------------------------------------------------------------------------------
+ // border line color 통일
+ // --------------------------------------------------------------------------------
+.page section.content h2.heading,
+.page section.sidebar.content h2.heading {
+	border-bottom:1px solid #888888;
+}
+
+
+// colorset
+
+.links-inherit a,
+.ellipsis a {
+	color:#888;
+
+	&:hover {
+		color:#666;
+		text-decoration:underline;
+	}
+}
+
+
+a.see-more,
+div.breadcrumb a,
+.ficon-thumbs-down, .article-vote .vote-down,
+.ficon-thumbs-down, .article-vote .vote-up {
+	color:$emerald;
+
+	&:hover {
+		color:$emerald;
+		text-decoration:underline;
+	}
+}
+
+
+.page hr {
+	border-top-color:#888;
+}
+
+
+div.list-lead a,
+div.cs-s h2.heading a {
+	color:#222;
+}
+
+.c-article-row .article-title a {
+	color:#222;
+}
+
+section.content {
+	.help-text, .p-info, .info-text, .list-noinfo, .description-text {
+		color:#888;
+	}
+}
+
+
+// type case
+.article-list.c-list .c-row:first-child {
+	border-top:0;
+}
+
+.article-list.c-list {
+	border-bottom:0;
+}
+
+
+// --------------------------------------------------------------------------------
+// 티켓 리스트
+// --------------------------------------------------------------------------------
+
+.c-list .c-row:first-child {
+	border-top-color:#888;
+}
+
+.c-row.c-ticket-row .status-source {
+	display:none;
+}
+
+.ellipsis .c-link {
+	color:#222;
+}
+
+
+// --------------------------------------------------------------------------------
+// pagination
+// --------------------------------------------------------------------------------
+.pagination .active span {
+	color:$emerald;
+}
+
+.pagination {
+	.previous a,
+	.next_page a {
+		color:#666;;
+	}
+}
