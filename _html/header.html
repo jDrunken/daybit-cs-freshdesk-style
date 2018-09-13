@@ -24,7 +24,9 @@
 
 					// 그리고 프로필 수정 삭제한다.
 					var profileLink = isLoginObject.parent('b');
-					profileLink[0].outerHTML = '';
+					if (profileLink.length) {
+						profileLink[0].outerHTML = '';
+					}
 
 				})(jQuery);
 				</script>
@@ -61,7 +63,7 @@
 		})()
 
 
-		if (isMobile.ios && isInApp || isMobile.android && inInApp) {
+		if (isMobile.ios && isInApp || isMobile.android && isInApp) {
 			$('html').attr('data-caller','inapp');
 		}
 	})(jQuery);
