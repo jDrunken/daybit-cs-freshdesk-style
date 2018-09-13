@@ -15,6 +15,19 @@
 			</div>
 			<nav class="banner-nav">
 				{{ portal | welcome_navigation }}
+				<script>
+				(function ($) {
+					// 로그인 상황이라면 body에 data-log-status를 추가한다.
+					var isLoginObject = $('a[href*="/support/profile/edit"]');
+
+					!!isLoginObject.length ? $('html').attr('data-log-status','on') : $('html').attr('data-log-status','off')
+
+					// 그리고 프로필 수정 삭제한다.
+					var profileLink = isLoginObject.parent('b');
+					profileLink[0].outerHTML = '';
+
+				})(jQuery);
+				</script>
 			</nav>
 		</div>
 	</header>
@@ -85,5 +98,3 @@
 <!-- 헤더 -->
 <!-- 헤더 -->
 <!-- 헤더 -->
-
-

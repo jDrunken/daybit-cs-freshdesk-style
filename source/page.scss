@@ -68,6 +68,10 @@ div.page {
 	margin-left:1em;
 	line-height:25px;
 
+	&:nth-of-type(1) {
+		margin:0;
+	}
+
 	a {
 		float:none;
 		display:inline;
@@ -98,9 +102,6 @@ section.help-center-sc .hc-nav > nav {
 		vertical-align:middle;
 		margin-left:1em;
 		line-height:25px;
-		&:first-child {
-			margin:0;
-		}
 	}
 }
 
@@ -149,12 +150,19 @@ section.help-center-sc {
 @media (max-width: 45em) {
 	.page-tabs > div.page {
 		padding:40px 10px 13px;
+
+		html[data-log-status='off'] & {
+			padding-top:22px;
+			padding-bottom:0;
+		}
 	}
+
 	section.help-center,
 	section.help-center-sc {
 		top:125px;
 		margin-top:0;
 		width:calc(100% - 60px);
+		margin-left:12px;
 	}
 
 	.help-center div.hc-search-input,
@@ -173,6 +181,10 @@ section.help-center-sc {
 	nav.page-tabs .nav-link {
 		margin-left:-10px;
 		top:101px;
+
+		html[data-log-status="off"] & {
+			top:67px;
+		}
 	}
 
 	.page section.help-center.home .hc-search,
@@ -214,6 +226,10 @@ section.help-center-sc {
 	div.hc-nav nav a {
 		display:inline;
 		width:auto;
+
+		html[data-log-status="off"] &[href*="support/tickets"] {
+			display:none;
+		}
 	}
 
 	section.content {
