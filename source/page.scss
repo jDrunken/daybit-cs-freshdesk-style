@@ -88,11 +88,20 @@ div.page {
 	}
 }
 
-section.help-center-sc .hc-nav > nav > div {
-	display:inline-block;
-	vertical-align:middle;
-	margin-left:1em;
-	line-height:25px;
+section.help-center-sc .hc-nav > nav {
+	@include media ('>45em') {
+		margin-top:5px;
+	}
+
+	> div {
+		display:inline-block;
+		vertical-align:middle;
+		margin-left:1em;
+		line-height:25px;
+		&:first-child {
+			margin:0;
+		}
+	}
 }
 
 
@@ -303,7 +312,7 @@ div.hc-search-input input.special {
 }
 
 .c-wrapper {
-	box-shadow:0 0 0;
+	box-shadow: 0 2px 4px 0 rgba(41,49,61,0.06);
 	border:0;
 }
 
@@ -509,14 +518,6 @@ h3.list-lead {
  }
 
 
- // --------------------------------------------------------------------------------
- // border line color 통일
- // --------------------------------------------------------------------------------
-.page section.content h2.heading,
-.page section.sidebar.content h2.heading {
-	border-bottom:1px solid #888888;
-}
-
 
 // colorset
 
@@ -543,10 +544,6 @@ div.breadcrumb a,
 	}
 }
 
-
-.page hr {
-	border-top-color:#888;
-}
 
 
 div.list-lead a,
@@ -575,14 +572,22 @@ section.content {
 }
 
 
+ // --------------------------------------------------------------------------------
+ // border line color 통일
+ // --------------------------------------------------------------------------------
+.page section.content h2.heading,
+.page section.sidebar.content h2.heading {
+	border-bottom:1px solid #EFF0F2;
+}
+
+.page hr,
+.c-list .c-row:first-child {
+	border-top-color:#EFF0F2;
+}
+
 // --------------------------------------------------------------------------------
 // 티켓 리스트
 // --------------------------------------------------------------------------------
-
-.c-list .c-row:first-child {
-	border-top-color:#888;
-}
-
 .c-row.c-ticket-row .status-source {
 	display:none;
 }
