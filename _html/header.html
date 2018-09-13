@@ -31,6 +31,41 @@
 			</nav>
 		</div>
 	</header>
+	<script>
+	(function ($) {
+		// user-agent :: inapp case에서는 header를 보여주지 않는다.
+		// 모바일 에이전트 구분
+		var isMobile = {
+			android: function () {
+				return navigator.userAgent.match(/Android/i) == null ? false : true;
+			},
+			blackBerry: function () {
+				return navigator.userAgent.match(/BlackBerry/i) == null ? false : true;
+			},
+			ios: function () {
+				return navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true;
+			},
+			opera: function () {
+				return navigator.userAgent.match(/Opera Mini/i) == null ? false : true;
+			},
+			windows: function () {
+				return navigator.userAgent.match(/IEMobile/i) == null ? false : true;
+			},
+			any: function () {
+				return (isMobile.android() || isMobile.blackBerry() || isMobile.ios() || isMobile.opera() || isMobile.windows());
+			}
+		};
+
+		var isInApp = (function () {
+			return navigator.userAgent.match(/inapp/gi) == null ? false : true;
+		})()
+
+
+		if (isMobile.ios && isInApp || isMobile.android && inInApp) {
+			$('html').attr('data-caller','inapp');
+		}
+	})(jQuery);
+	</script>
 	<nav class="page-tabs">
 	<div class="page no-padding">
 		{% if portal.tabs.size > 0 %}
