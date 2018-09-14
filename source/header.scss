@@ -59,15 +59,11 @@ header.banner {
 		width:auto;
 
 		.welcome,
-		.welcome b {
+		.welcome b,
+		a:after {
 			display:none;	// @@@@ css 상에서만 지워봄
 		}
-
-		a:after {
-			opacity:0.4;
-		}
 	}
-
 
 	.banner-nav {
 
@@ -106,7 +102,7 @@ header.banner {
 
 		.banner-language-selector {
 			top:0;
-			margin:0 0 0 10px;
+			margin:0 0 0 20px;
 
 			.dropdown-toggle {
 				font-weight:400;
