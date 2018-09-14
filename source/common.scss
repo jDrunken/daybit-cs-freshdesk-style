@@ -1,6 +1,5 @@
+// --------------------------------------------------------------------------------
 // common :: superset
-
-
 // --------------------------------------------------------------------------------
 // user comment custom
 // --------------------------------------------------------------------------------
@@ -79,4 +78,22 @@
 	.hide-in-mobile {
 		display: none !important
 	}
+}
+
+
+// --------------------------------------------------------------------------------
+// input:checkbox
+// --------------------------------------------------------------------------------
+select:focus,
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+	border-color: rgba(0, 34, 72,0.6);
+    box-shadow: 0px 0px 5px rgba(0, 34, 72,0.6);
+}
+
+label.radio input[type="radio"]:checked:before,
+label.checkbox input[type="checkbox"]:checked:before {
+    background-color: #002248;
+    border: 1px solid #002248;
 }
