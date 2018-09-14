@@ -12,5 +12,9 @@ html[data-caller='inapp'] {
 			margin-left: 12px;
 		}
 	}
-}
 
+	// inapp에서는 프린트 버튼 가리기
+	.icon-print.solution-print-icon {
+		display:none;
+	}
+}
