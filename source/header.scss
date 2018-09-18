@@ -5,6 +5,9 @@
 // namespace
 header {}
 
+header.banner {
+	background:#222;
+}
 
 header div.page {
 	max-width:1140px;
@@ -47,7 +50,8 @@ header.banner {
 		.portal-img {
 			height:auto;	// reset
 			img {
-				width:108px;
+				height:17px;
+				// width:108px;
 			}
 		}
 		h1 {
