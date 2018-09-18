@@ -333,6 +333,13 @@ div.hc-search-input input.special {
 }
 
 
+@include media ('<1020px') {
+	.c-wrapper {
+		box-shadow:0 0 0 0;
+	}
+}
+
+
 
 // --------------------------------------------------------------------------------
 // article front color
@@ -644,3 +651,6 @@ section.content {
 #attachment-type div.add_attachment {
 	color:#002248;
 }
+
+
+
