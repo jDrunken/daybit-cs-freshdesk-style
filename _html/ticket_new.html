@@ -18,7 +18,8 @@
 		$('html[lang="en"] option[value="계정정보 변경"]').text('Edit Account Information');
 		$('html[lang="en"] option[value="입금 및 출금"]').text('Deposit / Withdrawal');
 		$('html[lang="en"] option[value="거래"]').text('Transaction');
-		$('html[lang="en"] option[value="해킹 및 보이스피싱"]').text('Hacking / Fishing');
+		$('html[lang="en"] option[value="수사 및 금융기관"]').text('Investigation & Local authorities');
+		$('html[lang="en"] option[value="해킹 및 보이스피싱"]').text('Hacking / Phishing');
 		$('html[lang="en"] option[value="제휴 및 마케팅"]').text('Partnership / Marketing');
 		$('html[lang="en"] option[value="채굴 보상"]').text('Mining / Reward');
 		$('html[lang="en"] option[value="기타"]').text('Etc');
@@ -53,7 +54,7 @@
 				// 계정인증
 				$('html[lang="en"] option[value="이메일인증"]').text('E-mail Verification');
 				$('html[lang="en"] option[value="휴대폰인증"]').text('Phone Verification');
-				$('html[lang="en"] option[value="KYC(신분증) 인증"]').text('KYC Verification');
+				$('html[lang="en"] option[value="KYC인증"]').text('KYC Verification');
 
 				// 입금 및 출금
 				//// static labels
@@ -82,11 +83,20 @@
 				$('html[lang="en"] option[value="수수료"]').text('Fee');
 				$('html[lang="en"] option[value="매수"]').text('Buy');
 				$('html[lang="en"] option[value="매도"]').text('Sell');
+				$('html[lang="en"] option[value="저점대비 상승(Trailing) 주문"]').text('Raising from a low point Trailing');
+				$('html[lang="en"] option[value="고점대비 하락(Trailing) 주문"]').text('Dropping from a high point Trailing');
+				$('html[lang="en"] option[value="Stop-limit 주문"]').text('Stop-limit Order');
+
+				// 수사 및 금융기관
+				$('html[lang="en"] option[value="수사협조 공문"]').text('Investigation cooperative letter');
+				$('html[lang="en"] option[value="압수수색 영장"]').text('Confiscation warrant');
+				$('html[lang="en"] option[value="지급정지"]').text('Suspension of payment');
+				$('html[lang="en"] option[value="지갑존재여부"]').text('Wallet existence');
 
 
 				// 해킹 및 보이스피싱
 				$('html[lang="en"] option[value="해킹"]').text('Hacking');
-				$('html[lang="en"] option[value="보이스피싱"]').text('Fishing');
+				$('html[lang="en"] option[value="보이스피싱"]').text('Phishing');
 				$('html[lang="en"] option[value="미 확인 입출금"]').text('Unknown Withdrawal/Deposit');
 
 				// 제휴 및 마케팅
@@ -126,6 +136,7 @@
 							$('html[lang="en"] option[value="여권"]').text('Passport');
 							$('html[lang="en"] option[value="주민등록증"]').text('Registration card');
 							$('html[lang="en"] option[value="운전면허증"]').text('Driver\'s license');
+							$('html[lang="en"] option[value="신분증"]').text('Identification');
 
 							$('html[lang="en"] option[value="즉시매수"]').text('Instant Buy');
 							$('html[lang="en"] option[value="조건매수"]').text('Conditional Buy');
@@ -141,10 +152,16 @@
 
 							$('html[lang="en"] option[value="한 번 삭제된 KEY는 복구되지 않으며 사용할 수 없게됩니다."]').text('The API Key cannot be recovered once deleted.');
 
+							$('html[lang="en"] option[value="수수료 할인"]').text('Commission discount');
 							$('html[lang="en"] option[value="거래기반 채굴"]').text('Trade-driven Mining');
 							$('html[lang="en"] option[value="초대기반 채굴"]').text('Referral-driven Mining');
 
 							$('html[lang="en"] option[value="거래기반 보상"]').text('Transaction-driven Rewards');
+							$('html[lang="en"] option[value="초대기반 보상"]').text('Referral-driven Rewards');
+
+							$('html[lang="en"] option[value="확인"]').text('Confirm');
+							$('html[lang="en"] option[value="요청"]').text('Request');
+
 							$('html[lang="en"] option[value="초대기반 보상"]').text('Referral-driven Rewards');
 							_done = true;
 						}
@@ -157,6 +174,7 @@
 	})(jQuery);
 	</script>
 </section>
+
 
 
 
