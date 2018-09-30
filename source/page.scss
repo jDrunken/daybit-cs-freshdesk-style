@@ -149,19 +149,27 @@ section.help-center-sc {
 
 @media (max-width: 45em) {
 	.page-tabs > div.page {
-		padding:40px 10px 13px;
+        html[data-log-status="on"] & {
+            height:150px;
+            padding:0;
+        }
 
-		html[data-log-status='off'] & {
-			padding-top:22px;
-			padding-bottom:0;
-		}
+        html[data-log-status="off"] & {
+            height:120px;
+            padding:0;
+        }
+	}
+
+	nav.page-tabs .nav-link a {
+		padding-left:40px !important;
+		padding-right:40px !important;
 	}
 
 	section.help-center,
 	section.help-center-sc {
-		top:125px;
+		top:175px;
 		margin-top:0;
-		width:calc(100% - 60px);
+        width:calc(100% - 24px);
 		margin-left:12px;
 	}
 
@@ -178,13 +186,29 @@ section.help-center-sc {
 		padding:6px 45px 6px 13px;
 	}
 
-	nav.page-tabs .nav-link {
-		margin-left:-10px;
-		top:101px;
+    nav.page-tabs {
+        text-align:left;
+        .nav-link {
+            display:block !important;
+            position:static;
 
-		html[data-log-status="off"] & {
-			top:67px;
-		}
+            a {
+                display:inline-block;
+                &:nth-of-type(2),
+                &:nth-of-type(3) {
+                    display:none;
+                }
+
+                &:nth-of-type(1) {
+                    background-color:transparent;
+                }
+            }
+        }
+    }
+
+    // bugger menu
+	nav.page-tabs .mobile-icon-nav-menu {
+        display:none;
 	}
 
 	.page section.help-center.home .hc-search,
@@ -199,14 +223,6 @@ section.help-center-sc {
 		margin-top:7px;
 		float:none;
 		width:100%;
-	}
-
-	nav.page-tabs .nav-link a {
-		padding-left:20px !important;
-	}
-
-	nav.page-tabs .mobile-icon-nav-menu {
-		transform:translateY(-15px);
 	}
 
 	div.hc-nav nav span {

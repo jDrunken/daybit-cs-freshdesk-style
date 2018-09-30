@@ -97,3 +97,11 @@ label.checkbox input[type="checkbox"]:checked:before {
     background-color: #002248;
     border: 1px solid #002248;
 }
+
+input[type="checkbox"] {
+	visibility:hidden;
+}
+
+input[type="checkbox"]:before {
+	top:-3px;
+}

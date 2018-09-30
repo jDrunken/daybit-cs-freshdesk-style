@@ -70,8 +70,9 @@ header.banner {
 	}
 
 	.banner-nav {
-
 		margin:0;
+		font-size:0;
+
 		@media(max-width:45em) {
 			margin-top:10px;
 			text-align:left;
@@ -92,6 +93,7 @@ header.banner {
 			@media(max-width:45em) {
 				a,
 				&:first-child {
+					font-size:rem(14);
 					padding-left:0;
 					margin-left:0;
 				}
