@@ -45,7 +45,7 @@
 				return navigator.userAgent.match(/BlackBerry/i) == null ? false : true;
 			},
 			ios: function () {
-				return navigator.userAgent.match(/iPhone|iPad|iPod/i) == null ? false : true;
+				return navigator.userAgent.match(/iPhone|iPod/i) == null ? false : true;
 			},
 			opera: function () {
 				return navigator.userAgent.match(/Opera Mini/i) == null ? false : true;
@@ -58,12 +58,11 @@
 			}
 		};
 
-		var isInApp = (function () {
+		var isInApp = function () {
 			return navigator.userAgent.match(/inapp/gi) == null ? false : true;
-		})()
+		};
 
-
-		if (isMobile.ios && isInApp || isMobile.android && isInApp) {
+		if (isMobile.ios() && isInApp() || isMobile.android() && isInApp()) {
 			$('html').attr('data-caller','inapp');
 		}
 	})(jQuery);
@@ -76,7 +75,7 @@
 			{% if portal.current_language.code == "ko" %}
 			<a href="/ko/support/home">고객센터</a>
 			{% elsif portal.current_language.code == "en" %}
-			<a href="/en/support/home">Customer Center</a>
+			<a href="/en/support/home">Customer center</a>
 			{% endif %}
 
 			{% for category in portal.solution_categories %}

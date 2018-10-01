@@ -5,26 +5,43 @@
 			<ul class="internal-links">
 				{% if portal.current_language.code == "en" %}
                 <li><a target="_blank" href="//chain.partners/" rel="noopener">Company Info</a></li>
-                <li><a href="//daybit.com/etc/access-terms">Terms of Service</a></li>
-                <li><a href="//daybit.com/etc/privacy-policy">Privacy Policy</a></li>
+                <li><a id="terms"   href="//daybit.com/terms">Terms of Service</a></li>
+                <li><a id="privacy" href="//daybit.com/privacy">Privacy Policy</a></li>
                 <li><a href="/en/support/solutions/articles/36000061001--faq-how-much-for-the-transaction-fee-" rel="noopener">Fees</a></li>
 
-                <li><a target="_blank" href="#" rel="noopener">API</a></li>
-
+                <!-- <li><a target="_blank" href="#" rel="noopener">API</a></li> -->
                 <!-- <li><a href="/en/support/solutions/36000116954" rel="noopener">Notices</a></li> -->
                 <!-- <li><a href="/en/support/solutions/36000112689" rel="noopener">FAQ</a></li> -->
                 <!-- <li><a href="/en/support/home" rel="noopener">Customer Service</a></li> -->
+
+				<script>
+				// inapp call이라면 처리해줌
+				(function ($) {
+					if ($('html[data-caller="inapp"]')) {
+						$('#terms').attr('href','//daybit.com/terms/mobile/en');
+						$('#privacy').attr('href','//daybit.com/privacy/mobile/en');
+					}
+				})(jQuery);
+				</script>
 				{% elsif portal.current_language.code == "ko" %}
                 <li><a target="_blank" href="//chain.partners/" rel="noopener">회사소개</a></li>
-                <li><a href="//daybit.com/etc/access-terms">이용약관</a></li>
-                <li><a href="//daybit.com/etc/privacy-policy">개인정보처리방침</a></li>
+                <li><a id="terms"   href="//daybit.com/terms">이용약관</a></li>
+                <li><a id="privacy" href="//daybit.com/privacy">개인정보처리방침</a></li>
                 <li><a href="/ko/support/solutions/articles/36000061001--faq-how-much-for-the-transaction-fee-" rel="noopener">수수료안내</a></li>
 
-                <li><a target="_blank" href="#" rel="noopener">API안내</a></li>
-
+                <!-- <li><a target="_blank" href="#" rel="noopener">API안내</a></li> -->
                 <!-- <li><a href="/ko/support/solutions/36000116954" rel="noopener">공지사항</a></li> -->
                 <!-- <li><a href="/ko/support/solutions/36000112689" rel="noopener">FAQ</a></li> -->
                 <!-- <li><a href="/ko/support/home" rel="noopener">고객센터</a></li> -->
+				<script>
+				// inapp call이라면 처리해줌
+				(function ($) {
+					if ($('html[data-caller="inapp"]')) {
+						$('#terms').attr('href','//daybit.com/terms/mobile/ko');
+						$('#privacy').attr('href','//daybit.com/privacy/mobile/ko');
+					}
+				})(jQuery);
+				</script>
 				{% endif %}
             </ul>
             <ul class="external-links">

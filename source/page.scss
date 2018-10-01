@@ -1,4 +1,5 @@
 $emerald:#00bcb5;
+
 // --------------------------------------------------------------------------------
 // page
 // 본문 섹션
@@ -148,17 +149,27 @@ section.help-center-sc {
 }
 
 @media (max-width: 45em) {
+	// 검색영역 관련된 섹션
+	div.page {
+		padding-top:0;
+	}
+
+	.c-wrapper {
+		margin-top:0;
+	}
+
 	.page-tabs > div.page {
         html[data-log-status="on"] & {
-            height:150px;
+            height:100px + 10px + 16px;
             padding:0;
         }
 
         html[data-log-status="off"] & {
-            height:120px;
+            height:70px;
             padding:0;
         }
 	}
+	// --------------------------------------------------------------------------------
 
 	nav.page-tabs .nav-link a {
 		padding-left:40px !important;
@@ -167,10 +178,11 @@ section.help-center-sc {
 
 	section.help-center,
 	section.help-center-sc {
-		top:175px;
+		top:127px;
 		margin-top:0;
-        width:calc(100% - 24px);
+        width:calc(100% - 60px);
 		margin-left:12px;
+		z-index:2;
 	}
 
 	.help-center div.hc-search-input,
@@ -189,26 +201,16 @@ section.help-center-sc {
     nav.page-tabs {
         text-align:left;
         .nav-link {
-            display:block !important;
-            position:static;
-
             a {
-                display:inline-block;
-                &:nth-of-type(2),
-                &:nth-of-type(3) {
-                    display:none;
-                }
-
-                &:nth-of-type(1) {
-                    background-color:transparent;
-                }
+				font-size:rem(14);
+                display:block;
             }
         }
     }
 
-    // bugger menu
 	nav.page-tabs .mobile-icon-nav-menu {
-        display:none;
+		margin-top:10px;
+		float:right;
 	}
 
 	.page section.help-center.home .hc-search,
@@ -220,10 +222,13 @@ section.help-center-sc {
 	}
 
 	div.hc-nav {
-		margin-top:7px;
-		float:none;
+		margin-top:22px;
 		width:100%;
 	}
+
+    .help-center div.hc-nav {
+        float:none;
+    }
 
 	div.hc-nav nav span {
 		display:inline;
@@ -670,3 +675,37 @@ section.content {
 
 
 
+
+// --------------------------------------------------------------------------------
+// 검색결과 UI
+// --------------------------------------------------------------------------------
+@media (max-width: 45em) {
+	body > .ui-autocomplete.ui-front.ui-menu.ui-widget.ui-widget-content {
+		width:auto !important;
+		right:14px;
+	}
+
+}
+body > .ui-autocomplete {
+	padding-bottom:0;
+}
+
+body > .ui-autocomplete li:last-child {
+	border-bottom:0;
+}
+
+
+// --------------------------------------------------------------------------------
+// solution details
+// --------------------------------------------------------------------------------
+
+
+@media (max-width: 45em) {
+	.c-row.c-article-row div.description-text,
+	.c-row.c-article-row div.help-text,
+	.c-row.c-ticket-row div.description-text,
+	.c-row.c-ticket-row div.help-text {
+		margin-left:0;
+	}
+
+}

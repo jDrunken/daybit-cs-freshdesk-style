@@ -176,6 +176,11 @@ a[href*="/support/profile/edit"] {
 nav.page-tabs {
 	.nav-link {
 		margin:0;
+		top:128px;
+
+        html[data-log-status="off"] & {
+			top:70px;
+		}
 
 		a {
 			font-weight:400;
