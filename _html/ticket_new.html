@@ -2,6 +2,11 @@
 	<h3 class="heading">{% translate ticket.submit_ticket_title %}</h3>
   	{% snippet new_ticket_form %}
 	<script>
+	// gnb section의 영역을 변경
+	(function ($) {
+		$('.page.no-padding').addClass('ticket-make');
+	})(jQuery);
+	// 번역 지원이 안되서 자체적으로 처리하자. ㅡㅜ
 	(function ($) {
 		$('html[lang="en"] label[for="helpdesk_ticket_email"]').text('e-mail');
 		$('html[lang="en"] label[for="helpdesk_ticket_subject"]').text('Title');

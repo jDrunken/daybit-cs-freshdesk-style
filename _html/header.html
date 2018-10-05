@@ -62,6 +62,10 @@
 			return navigator.userAgent.match(/inapp/gi) == null ? false : true;
 		};
 
+		if (isMobile.any()) {
+			$('html').attr('data-is-mobile','true');
+		}
+
 		if (isMobile.ios() && isInApp() || isMobile.android() && isInApp()) {
 			$('html').attr('data-caller','inapp');
 		}

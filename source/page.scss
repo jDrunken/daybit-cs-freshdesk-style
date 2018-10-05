@@ -101,7 +101,7 @@ section.help-center-sc .hc-nav > nav {
 	> div {
 		display:inline-block;
 		vertical-align:middle;
-		margin-left:1em;
+		// margin-left:1em;
 		line-height:25px;
 	}
 }
@@ -168,8 +168,12 @@ section.help-center-sc {
             height:70px;
             padding:0;
         }
+
+        html[data-log-status="on"] &.ticket-make,
+        html[data-log-status="off"] &.ticket-make {
+			height:auto;
+        }
 	}
-	// --------------------------------------------------------------------------------
 
 	nav.page-tabs .nav-link a {
 		padding-left:40px !important;
@@ -210,6 +214,7 @@ section.help-center-sc {
 
 	nav.page-tabs .mobile-icon-nav-menu {
 		margin-top:8px;
+		margin-bottom:8px;
 		float:right;
 	}
 
@@ -221,9 +226,12 @@ section.help-center-sc {
 		position:relative;
 	}
 
-	div.hc-nav {
-		margin-top:22px;
-		width:100%;
+	.help-center,
+	.help-center-sc {
+		div.hc-nav {
+			margin-top:22px;
+			width:100%;
+		}
 	}
 
     .help-center div.hc-nav {
@@ -244,12 +252,15 @@ section.help-center-sc {
 		width:100%;
 	}
 
-	div.hc-nav nav a {
-		display:inline;
-		width:auto;
+	div.hc-nav nav {
+		a {
+			display:inline;
+			width:auto;
+			margin-right:0;
 
-		html[data-log-status="off"] &[href*="support/tickets"] {
-			display:none;
+			html[data-log-status="off"] &[href*="support/tickets"] {
+				display:none;
+			}
 		}
 	}
 
@@ -629,6 +640,10 @@ section.content {
 	border-top-color:#EFF0F2;
 }
 
+.c-list {
+	border-bottom:0;
+}
+
 // --------------------------------------------------------------------------------
 // 티켓 리스트
 // --------------------------------------------------------------------------------
@@ -708,4 +723,87 @@ body > .ui-autocomplete li:last-child {
 		margin-left:0;
 	}
 
+}
+
+// --------------------------------------------------------------------------------
+// 티켓 목록 리스트
+// --------------------------------------------------------------------------------
+	// 버튼 섹션
+	section.toolbar-actions {
+		margin-top:15px;
+
+		a,
+		a.btn.btn-icon.btn-small.btn-primary {
+			border:0;
+			height:32px;
+			padding:7px 28px;
+		}
+
+		.btn-group {
+			a:nth-of-type(1) {
+				margin-right:1em;
+			}
+
+		}
+	}
+
+	div.user-info {
+		padding-top:0.5em;
+		.thumb.avatar-text {
+			display:none;
+		}
+
+		.user-details {
+			margin-left:0;
+		}
+
+	}
+
+	// 문의 목록 댓글 리스트
+	section#ticket-description.user-comment {
+		div.p-content {
+			background:transparent;
+			margin-top:2em;
+			border:0;
+			padding:0;
+		}
+	}
+
+	#ticket-comments {
+		margin-top:4em;
+	}
+
+	#add-note-form {
+		input.btn.btn-primary,
+		a.btn {
+			border:0;
+			height:32px;
+			padding:7px 28px;
+		}
+	}
+
+
+
+
+// --------------------------------------------------------------------------------
+// 새 티켓의 checkbox,radio
+// --------------------------------------------------------------------------------
+div.controls {
+	.radio,
+	.checkbox {
+		margin-left:18px;
+		padding-left:0;
+		position:relative;
+	}
+	.radio input[type="radio"],
+	.checkbox input[type="checkbox"] {
+		float:none;
+		position:absolute;
+		left:0;
+		top:0;
+		&:before {
+			left:0px;
+			top:2px;
+		}
+	}
 }
