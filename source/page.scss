@@ -807,3 +807,36 @@ div.controls {
 		}
 	}
 }
+
+
+
+// --------------------------------------------------------------------------------
+// 티켓 상세 페이지
+// --------------------------------------------------------------------------------
+section.comment-by-agent div.user-details h4.user-name {
+	line-height:31px;
+}
+
+section.comment-by-agent .user-pic-thumb.image-lazy-load.user-pointer-bottom {
+	margin-right:8px;
+}
+
+.user-pic-thumb.image-lazy-load.user-pointer-bottom:before,
+.user-pic-thumb.image-lazy-load.user-pointer-bottom:after {
+	display:none;
+}
+
+.comment-by-agent div.p-content {
+	padding-top:24px;
+	padding-bottom:24px;
+}
+
+@media (max-width: 470px) {
+	section.comment-by-agent div.user-details h4.user-name {
+		line-height:1;
+	}
+	span.p-info {
+		display:block;
+		line-height:1.2;
+	}
+}

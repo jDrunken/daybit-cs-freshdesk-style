@@ -1,20 +1,40 @@
 <section class="content min-height-on-desktop rounded-6 ticket-page">
-  <div class="ticket-toolbar pull-right">
-    <!-- <a href="{{ portal.ticket_export_url }}" data-target="#export-modal" -->
-    <!--     id="ticket-export-button" rel="freshdialog" class="hide" -->
-    <!--     data-submit-label="{% translate portal.tickets.submit_export %}" -->
-    <!--     title="{% translate portal.tickets.export_ticket_data %}"> -->
-    <!--   {% translate portal.tickets.export %} -->
-    <!-- </a> -->
-    {% if portal.facebook_portal %}
-      <a href="{{ portal.new_ticket_url }}" class="btn btn-primary index_new_ticket" id="new_support_ticket">
-        {% translate facebook_tab.portal.new_ticket %}
-      </a>
-    {% endif %}
-  </div>
-  <div id="ticket-filter-container" class="ticket-filter">
-    {% snippet ticket_filters %}
-  </div>
+	<!-- <div class="ticket-toolbar pull-right"> -->
+		<!-- <a href="{{ portal.ticket_export_url }}" data-target="#export-modal" -->
+			<!-- id="ticket-export-button" rel="freshdialog" class="hide" -->
+			<!-- data-submit-label="{% translate portal.tickets.submit_export %}" -->
+			<!-- title="{% translate portal.tickets.export_ticket_data %}"> -->
+		  <!-- {% translate portal.tickets.export %} -->
+		<!-- </a> -->
+		<!-- {% if portal.facebook_portal %} -->
+		<!-- <a href="{{ portal.new_ticket_url }}" class="btn btn-primary index_new_ticket" id="new_support_ticket"> -->
+			<!-- {% translate facebook_tab.portal.new_ticket %} -->
+		<!-- </a> -->
+		<!-- {% endif %} -->
+	<!-- </div> -->
+	<div id="ticket-filter-container" class="ticket-filter">
+		{% snippet ticket_filters %}
+	</div>
 
-  {% snippet ticket_list %}
+	{% snippet ticket_list %}
+	<script>
+		(function ($) {
+			setInterval(function () {
+				// Kor
+				$('html[lang="ko"] span.label-status-pending.label:contains("처리 중")').text('열림');
+				$('html[lang="ko"] span.label-status-pending.label:contains("응답 대기 중")').text('대기');
+
+				$('html[lang="ko"] span.label-status-closed.label:contains("이 티켓은 해결되었습니다.")').text('해결');
+				$('html[lang="ko"] span.label-status-closed.label:contains("이 티켓은 종료되었습니다.")').text('종료');
+
+				// Eng
+				$('html[lang="en"] span.label-status-pending.label:contains("처리 중")').text('Open');
+				$('html[lang="en"] span.label-status-pending.label:contains("응답 대기 중")').text('Pending');
+
+				$('html[lang="en"] span.label-status-closed.label:contains("이 티켓은 해결되었습니다.")').text('Solved');
+				$('html[lang="en"] span.label-status-closed.label:contains("이 티켓은 종료되었습니다.")').text('Closed');
+			},200);
+		})(jQuery);
+	</script>
 </section>
+

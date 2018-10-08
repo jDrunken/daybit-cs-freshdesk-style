@@ -113,6 +113,22 @@
 				})(jQuery);
 				</script>
 			{% endif %}
+			<script>
+			// 티켓 상태에 따라 나오는 워딩 수정
+			(function ($) {
+				$('html[lang="ko"] .alert.alert-ticket-status b:contains("처리 중")').html('').parent().append(' <b> 열림</b>');
+				$('html[lang="en"] .alert.alert-ticket-status b:contains("처리 중")').text('Open, ');
+
+				$('html[lang="ko"] .alert.alert-ticket-status b:contains("응답 대기 중")').html('').parent().append(' <b> 대기 중</b>');
+				$('html[lang="en"] .alert.alert-ticket-status b:contains("응답 대기 중")').text('Pending, ');
+
+				$('html[lang="ko"] .alert.alert-ticket-status b:contains("이 티켓은 해결되었습니다.")').html('').parent().append(' <b> 해결</b>');
+				$('html[lang="en"] .alert.alert-ticket-status b:contains("이 티켓은 해결되었습니다.")').text('Solved, ');
+
+				$('html[lang="ko"] .alert.alert-ticket-status b:contains("이 티켓은 종료되었습니다.")').html('').parent().append(' <b> 종료</b>');
+				$('html[lang="en"] .alert.alert-ticket-status b:contains("이 티켓은 종료되었습니다.")').text('Closed, ');
+			})(jQuery);
+			</script>
 			<section id="reply-to-ticket" name="reply-to-ticket" class="user-comment {% if ticket.closed? %}hide{% endif %}">
 				<div class="user-info">
 					{{ portal.user | profile_image:'user-pointer-bottom', '40px', '40px' }}
@@ -151,5 +167,6 @@
 <!-- </section> -->
 
 {% snippet ticket_add_people %}
+
 
 
