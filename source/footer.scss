@@ -88,11 +88,10 @@ footer nav {
 				padding-left: 0;
 			}
 
-			&:nth-of-type(3) {
-				font-weight:bold;
-				a {
-					color:#222;
-				}
+			&:nth-of-type(3) a,
+			&:nth-of-type(3) a:visited {
+				font-weight:700;
+				color:#222;
 			}
 		}
 	}
