@@ -36,17 +36,30 @@
 			$('html[lang="en"] #helpdesk_ticket_ticket_type').on('change',function () {
 
 				// common
-				//// description
+				//// screenshot description
+				var screenshotDesc = {};
+				screenshotDesc.text = "오류 발생 시 오류화면의 스크린샷을 첨부해주세요.";
+				screenshotDesc.obj = $('html[lang="en"] label:contains("'+screenshotDesc.text+'")');
+				screenshotDesc.en = 'Please attach a screenshot in case of error.';
+				if (!!screenshotDesc.obj.length) {
+					$(screenshotDesc.obj).html(
+						$(screenshotDesc.obj).html().replace(screenshotDesc.text,screenshotDesc.en)
+					);
+				}
+				$('html[lang="en"] label:contains("세부유형")').text('Subtype');
+
+
+				// screenshot description
 				var attachDesc = {};
-				attachDesc.text = "오류 발생 시 오류화면의 스크린샷을 첨부해주세요.";
+				attachDesc.text = "증빙서류 첨부해주세요.";
 				attachDesc.obj = $('html[lang="en"] label:contains("'+attachDesc.text+'")');
-				attachDesc.en = 'Please attach a screenshot in case of error.';
+				attachDesc.en = 'Attachments';
 				if (!!attachDesc.obj.length) {
 					$(attachDesc.obj).html(
 						$(attachDesc.obj).html().replace(attachDesc.text,attachDesc.en)
 					);
 				}
-				$('html[lang="en"] label:contains("세부유형")').text('Subtype');
+				// $('html[lang="en"] label:contains("증빙서류 첨부해주세요.")').text('Attachments');
 
 
 				// 2 depth select
@@ -118,6 +131,9 @@
 				$('html[lang="en"] option[value="채굴"]').text('Mining');
 				$('html[lang="en"] option[value="보상"]').text('Reward');
 
+				// 리워드
+				$('html[lang="en"] option[value="DAY 수수료 할인"]').text('Referral-driven Rewards');
+				$('html[lang="en"] option[value="리워드"]').text('Reward');
 
 
 
@@ -168,6 +184,10 @@
 							$('html[lang="en"] option[value="요청"]').text('Request');
 
 							$('html[lang="en"] option[value="초대기반 보상"]').text('Referral-driven Rewards');
+
+							$('html[lang="en"] option[value="DAY리워드"]').text('DAY Reward');
+							$('html[lang="en"] option[value="BTC리워드"]').text('Referral Reward');
+
 							_done = true;
 						}
 					},50);
