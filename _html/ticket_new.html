@@ -26,6 +26,7 @@
 		$('html[lang="en"] option[value="수사 및 금융기관"]').text('Investigation & Local authorities');
 		$('html[lang="en"] option[value="해킹 및 보이스피싱"]').text('Hacking / Phishing');
 		$('html[lang="en"] option[value="제휴 및 마케팅"]').text('Partnership / Marketing');
+		$('html[lang="en"] option[value="오류 및 에러"]').text('Error');
 		$('html[lang="en"] option[value="채굴 보상"]').text('Mining / Reward');
 		$('html[lang="en"] option[value="기타"]').text('Etc');
 
@@ -47,6 +48,8 @@
 					);
 				}
 				$('html[lang="en"] label:contains("세부유형")').text('Subtype');
+				$('html[lang="en"] label:contains("운영체제")').text('OS');
+				$('html[lang="en"] label:contains("디바이스")').text('OS');
 
 
 				// screenshot description
@@ -127,6 +130,15 @@
 				$('html[lang="en"] option[value="API 오류"]').text('API error');
 				$('html[lang="en"] option[value="API 삭제"]').text('API delete');
 
+
+				// 오류 및 에러
+				$('html[lang="en"] label:contains("기기종류 (ex: 아이폰7)")').html('Device type<br />(ex: iPhone X)');
+				$('html[lang="ko"] label:contains("기기종류 (ex: 아이폰7)")').html('기기종류<br /> (예: 아이폰 X)');
+
+				$('html[lang="en"] option[value="웹(Web)"]').text('Web');
+				$('html[lang="en"] option[value="안드로이드(Android)"]').text('Android');
+				$('html[lang="en"] option[value="아이오에스(iOS)"]').text('iOS');
+
 				// 채굴 보상
 				$('html[lang="en"] option[value="채굴"]').text('Mining');
 				$('html[lang="en"] option[value="보상"]').text('Reward');
@@ -199,3 +211,4 @@
 	})(jQuery);
 	</script>
 </section>
+
