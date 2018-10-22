@@ -24,11 +24,31 @@
 					})(jQuery);
 				</script>
 			</div>
-			{% if portal.user %}
 			<div class="hc-nav {% if portal.contact_info %} nav-with-contact {% endif %}">
 				{{ portal | helpcenter_navigation }}
 			</div>
-			{% endif %}
+			<script>
+				// gnb nav의 현재 활성화중인 링크 표시. 빈 문장으로 처리
+				(function ($) {
+					var loginDesc = {};
+					loginDesc.text = "새 티켓을 제출하려면";
+					loginDesc.obj = $('html[lang="ko"] .hc-nav div.hide-in-mobile:contains("'+loginDesc.text+'")')
+					loginDesc.ko = '';
+					if (!!loginDesc.obj.length) {
+						$(loginDesc.obj).html(
+							$(loginDesc.obj).html().replace(loginDesc.text,loginDesc.ko)
+						);
+					}
+
+					$('html[lang="ko"] .hc-nav a:contains("로그인")').html('<span>문의접수하기</span>').addClass('mobile-icon-nav-newticket new-ticket ellipsis');
+
+					$('html[lang="ko"] .hc-nav a:contains("신규 고객지원 티켓 작성") span').text('문의접수하기');
+					$('html[lang="ko"] .hc-nav a:contains("티켓 진행상황을 확인") span').text('문의진행상황');
+
+					$('html[lang="en"] .hc-nav a:contains("New support ticket") span').text('New Ticket');
+					$('html[lang="en"] .hc-nav a:contains("Check Ticket status") span').text('Ticket Status');
+				})(jQuery);
+			</script>
 		</section>
 	{% endif %}
 
@@ -57,6 +77,3 @@
 
 </div>
 {{ footer }}
-
-
-
