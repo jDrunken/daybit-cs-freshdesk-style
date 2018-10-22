@@ -89,6 +89,9 @@ header.banner {
 
 			a[href*="/login"] {
 				padding:0;
+				b {
+					font-size:rem(14);
+				}
 			}
 
 			@media(max-width:45em) {
